@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
-    <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -13,19 +12,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>sObject__c</field>
+                <field>Email_Template__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Unique_Name__c</field>
+                <field>Field__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Type__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>isCalculated__c</field>
+                <behavior>Required</behavior>
+                <field>Unique_Key__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns/>
@@ -51,44 +46,17 @@
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>
     <layoutSections>
-        <customLabel>true</customLabel>
+        <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
         <editHeading>true</editHeading>
-        <label>Custom Links</label>
         <layoutColumns/>
         <layoutColumns/>
         <layoutColumns/>
         <style>CustomLinks</style>
     </layoutSections>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>List_View__c.NAME</fields>
-        <fields>List_View__c.sObject__c</fields>
-        <fields>CREATED_DATE</fields>
-        <relatedList>List_View_Field__c.Field__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Page_Layout__c.NAME</fields>
-        <fields>Page_Layout__c.sObject__c</fields>
-        <fields>CREATED_DATE</fields>
-        <relatedList>Page_Layout_Field__c.Field__c</relatedList>
-    </relatedLists>
-    <relatedLists>
-        <fields>NAME</fields>
-        <fields>Email_Template__c.NAME</fields>
-        <fields>Email_Template__c.CREATED_DATE</fields>
-        <relatedList>Email_Template_Field__c.Field__c</relatedList>
-    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
-    <summaryLayout>
-        <masterLabel>00hM0000000OGPG</masterLabel>
-        <sizeX>4</sizeX>
-        <sizeY>0</sizeY>
-        <summaryLayoutStyle>Default</summaryLayoutStyle>
-    </summaryLayout>
 </Layout>
