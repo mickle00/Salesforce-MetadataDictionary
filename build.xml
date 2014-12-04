@@ -1,0 +1,17 @@
+<project name="Metadata-Dictionary" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+
+    <property file="sf.properties"/>
+    <property environment="env"/>
+
+    <!-- Shows deploying code & running tests for code in directory -->
+    <target name="shipit">
+      <sf:deploy username= "${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" deployRoot="src" rollbackOnError="false" ignoreWarnings="false" pollWaitMillis="10000" maxPoll="500" allowMissingFiles="True">
+      </sf:deploy>
+    </target>
+
+    <target name="get">
+      <!-- Retrieve the contents into another directory -->
+      <sf:retrieve username="${sf.username}" password="${sf.password}" serverurl="${sf.serverurl}" retrieveTarget="src" unpackaged="src/package.xml"/>
+    </target>
+
+</project>

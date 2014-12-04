@@ -1,0 +1,42 @@
+Intro:
+
+While Salesforce offers some mechanism to describe metadata via FieldDescribes, and sObjectDescribes, this is calculated at run time, does not track changes, and does not allow for much collaboration or customization, and not every piece of metadata is exposed.
+
+MetadataDictionary aims to cache specific metadata components (primarily schema) into actual SalesforceObjects to enable:
+    --Chatter & Notes/Attachments to ask questions or collaborate
+    --History Tracking
+        --E.g., When did a field get added (TODO: Removed) from a sObject/Page Layout/ListView
+    --Extending metadata 
+        --E.g., Adding custom fields to metadata items e.g., Field__c.Master_Source__c if you want to document where a data source is mastered up-stream, or what team is responsible for upkeep.
+    --Relate to other project management / data dictionary items 
+        -E.g., user stories / commits / external-sources / business teams
+    --Leverage existing Salesforce Reporting / List View / Dashboard components
+        --Fields created this month
+        --All formula fields
+        --Page Layouts that include Custom_Object__c.Custom_Field__c
+        --ListViews that are filtering where Custom_Object__c = 'foo'
+
+Examples:
+    --
+
+Known Issues:
+    --Currently deletion or removal of items does not get tracked.
+    --StandardFields are not included in PageLayout & List Views (naming convention does not appear consistent)
+    --Requireds MetadataService.cls (~700k Apex Characters) to retrieve items from MetadataAPI that are not available in Apex (ListViews, Page Layouts)
+    --Requires running batch class to parse all items. No way to filter where modified > $LastBatchRun
+
+Enhancements:
+    --Generate SOQL from ListView Fields
+    --Grab ListViewId from StandardSetController to allow quicklinks, possibly include view in embedded Visualforce Page
+    --Show "Sample Data" on Field__c PageLayout "SELECT {Field} FROM {Field.sObject__c} WHERE {Field} != NULL LIMIT 10"
+    --Flag an "Inactive Date" for deleted or removed items
+    --Include FieldPicklistValues
+    --Include RecordType FieldPicklistValue Mapping
+    --Include Profiles: FLS / OLS, PageLayout/RecordType Mapping
+    --Include all items of describe calls in cached sObject record
+    --Include Reports 
+        --Maybe hard due to limitation of # records returned from MetadataAPI
+    --Include Email Templates
+        --Maybe hard due to limitation of # records returned from MetadataAPI
+        --Maybe hard to parse out field tokens
+

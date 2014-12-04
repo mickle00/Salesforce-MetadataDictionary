@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>FieldClass</members>
+        <members>FieldClassBatch</members>
+        <members>ListViewClass</members>
+        <members>ListViewClassBatch</members>
+        <members>ListViewFieldClass</members>
+        <members>PageLayoutClass</members>
+        <members>PageLayoutClassBatch</members>
+        <members>PageLayoutFieldClass</members>
+        <members>sObjectClass</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Metadata</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Field__c</members>
+        <members>List_View_Field__c</members>
+        <members>List_View__c</members>
+        <members>Page_Layout_Field__c</members>
+        <members>Page_Layout__c</members>
+        <members>sObject__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Field__c</members>
+        <members>List_View__c</members>
+        <members>Page_Layout__c</members>
+        <members>sObject__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Field__c.Field Layout</members>
+        <members>List_View_Field__c.List_View_Field Layout</members>
+        <members>List_View__c.List_View Layout</members>
+        <members>Page_Layout_Field__c.Page_Layout_Field Layout</members>
+        <members>Page_Layout__c.Page_Layout Layout</members>
+        <members>sObject__c.sObject Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Admin</members>
+        <name>Profile</name>
+    </types>
+    <version>30.0</version>
+</Package>
